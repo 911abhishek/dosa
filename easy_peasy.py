@@ -14,3 +14,4 @@ def check_prime(n):
 
 nm = int(input("Enter a number: "))
 check_prime(nm)
+# office
