@@ -88,10 +88,32 @@ def find_symmetric(arr2):
             print(arr2[i], arr2[j])
    
 
-arr = [1,2,3,4,5]
+arr = [200,300,400,100]
 arr2 = [(1,2), (2,1), (3,4), (4,3), (5,1), (6,1), (1,6)]
 
 
 # Maximum Product Subarray in an Array
 
-print(k_swap(arr,2))
+def max_sub_arr(arr):
+   high_prdct = float('-inf')
+   
+   for i in range(len(arr)):
+      prdct = 1
+      for j in range(i,len(arr)):
+        prdct *= arr[j]
+        if(prdct>high_prdct):
+           high_prdct = prdct
+   return high_prdct
+   
+def ang_with_rank(arr):
+   rank_ar = sorted(set(arr))
+   map ={}
+   for i , num in enumerate(rank_ar):
+      map[num] = i+1
+   new_ar = []
+   for i in arr:
+      new_ar.append(map[i])
+   print(new_ar)
+   return 0
+
+print(ang_with_rank(arr))
